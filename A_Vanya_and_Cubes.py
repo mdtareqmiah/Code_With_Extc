@@ -1,0 +1,10 @@
+a=int(input())
+ct=0
+n=1
+z=2
+while(a>=n):
+    a=a-n
+    ct+=1
+    n+=z
+    z+=1
+print(ct)
