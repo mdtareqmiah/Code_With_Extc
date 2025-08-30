@@ -1,19 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
 vector<vector<int>>adj;
-int dist_n, mx_dist;
+int mx_dis, dist_node;
 
-void dfs(int u, int p=-1, int dis=0){
-    if(dis>mx_dist){
-        mx_dist=dis;
-        dist_n=u;
+void dfs(int u, int p=-1, int dist=0){
+    if(dist>mx_dis){
+        mx_dis=dist;
+        dist_node=u;
     }
     for(auto v:adj[u]){
+
         if(v!=p){
-            dfs(v,u,dis+1);
+            dfs(v,u,dist+1);
         }
     }
 }
+
 
 int main(){
     int n;
@@ -24,13 +26,15 @@ int main(){
         cin>>a>>b;
         adj[a].push_back(b);
         adj[b].push_back(a);
-
     }
-
-    mx_dist=dist_n=-1;
+     mx_dis=dist_node=-1;
+    
     dfs(1);
-    mx_dist=-1;
-    dfs(dist_n);
-    cout<<mx_dist<<"\n";
+    mx_dis=-1;
+    dfs(dist_node);
+    cout<<mx_dis<<"\n";
+
+
+    return 0;
 
 }

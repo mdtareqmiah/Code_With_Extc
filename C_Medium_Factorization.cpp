@@ -1,20 +1,16 @@
 #include<bits/stdc++.h>
-#define ll long long
 using namespace std;
-//smallest priome factor
-const int maxi=1e7+5;
-ll spf[maxi];
-
+const int N=1e7+5;
+int spf[N];
 
 void spff(){
-    for(int i=0; i<=maxi; i++){
+    for(int i=0; i<=N; i++){
         spf[i]=i;
     }
-
-    int lim=sqrt(maxi+0.5);
-    for(int i=2; i<lim; i++){
+    int lim=sqrt(N+0.5);
+    for(int i=2; i<=lim; i++){
         if(spf[i]==i){
-            for(int j=i*i; j<=maxi; j+=i){
+            for(int j=i*i; j<=N; j+=i){
                 if(spf[j]==j){
                     spf[j]=i;
                 }
@@ -23,36 +19,21 @@ void spff(){
     }
 }
 
-
 int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+
     spff();
     int n;
-    while(cin>>n){
+    while(cin>>n && n){
         int x=n;
-        vector<int>v;
+        cout<<1;
         while(n!=1){
-            v.push_back(spf[n]);
+            cout<<" x "<<spf[n];
             n/=spf[n];
         }
-        // for(auto u:v){
-        //     cout<<u<<" ";
-        // }
-        // cout<<"\n";
-        if(x==1){
-            cout<<1<<"\n";
-         }
-        else{
-            cout<<"1 x ";
-            for(int i=0; i<v.size(); i++){
-                cout<<v[i]; 
-                if(i!=(v.size()-1)){
-                    cout<<" x ";
-                }
-            }
-            cout<<"\n";
-        }
+        cout<<"\n";
     }
-    
-
-    return 0;
+    return 0;    
 }
