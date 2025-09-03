@@ -1,9 +1,11 @@
 #include<bits/stdc++.h>
+#define int long long 
 using namespace std;
-#define int unsigned long long 
-const int N=1e6+5;
-bitset<N>priems;
+
+const int N=1e7+5;
+bitset<N> priems;
 vector<int>v;
+
 
 void sive(){
     priems.set();
@@ -20,36 +22,35 @@ void sive(){
         if(priems[i]){
             v.push_back(i);
         }
-
     }
 }
 
-
-
 bool density(int n){
-    if(n<2) return false;
-    for(int u:v){
-        if(u*u>n){
-            break;
-        }
+    for(auto u:v){
+        if(u*u>n) break;
         if(n%u==0){
             return false;
         }
     }
     return true;
 }
+int next_p(int n){
+    n++;
+    while(!density(n)){
+        n++;
+
+    }
+    return n;
+}
 
 int32_t main(){
     sive();
-    int t;
-    cin>>t;
-    while(t--){
+    int n;
+    cin>>n; 
+    while(n--){
         int n;
         cin>>n;
-        int x=n-1;
-        while(!density(x)){
-            x--;
-        }
-        cout<<x<<"\n";
+        cout<<next_p(n)<<"\n";
+        
     }
 }
