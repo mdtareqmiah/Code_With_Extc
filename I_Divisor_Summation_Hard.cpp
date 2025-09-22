@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-#define int long long 
+#define int unsigned long long 
 using namespace std;
 const int N=1e6+5;
 bitset<N>priems;
@@ -23,22 +23,30 @@ void sive(){
     }
 
 }
-
+int ipow(int base, int exp) {
+    int res = 1;
+    while (exp > 0) {
+        if (exp & 1) res *= base;
+        base *= base;
+        exp >>= 1;
+    }
+    return res;
+}
 
 int sofdiv(int n){
     int sod=1;
     int temp=n; 
-    for(auto p:v){
+    for(int p:v){
         if(p*p>n) break;
         int cnt=0;
         while(n%p==0){
             cnt++;
             n/=p;
         }
-        sod*=(pow(p,cnt+1)-1)/(p-1);
+        sod*=(ipow(p,cnt+1)-1)/(p-1);
 
     }
-    if(n>1) sod*=(pow(n,2)-1)/(n-1);
+    if(n>1) sod*=(ipow(n,2)-1)/(n-1);
     return sod-temp;
 }
 

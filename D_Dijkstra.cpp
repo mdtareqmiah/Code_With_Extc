@@ -52,7 +52,7 @@ int main() {
         return 0;
     }
 
-    // path বের করা
+
     vector<int> path;
     for (int cur = n; cur != -1; cur = parent[cur])
         path.push_back(cur);
