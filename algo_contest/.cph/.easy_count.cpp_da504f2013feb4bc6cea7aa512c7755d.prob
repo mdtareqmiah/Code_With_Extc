@@ -1,0 +1,1 @@
+{"name":"Local: easy_count","url":"e:\\Code_with_extention\\algo_contest\\easy_count.cpp","tests":[{"id":1758809115526,"input":"7\n10\n20\n3\n15\n1000\n60\n16","output":"8\n16\n3\n11\n750\n46\n12"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Code_with_extention\\algo_contest\\easy_count.cpp","group":"local","local":true}
