@@ -9,4 +9,5 @@ int main(){
     else{
         cout<<"NO\n";
     }
+    return 0;
 }
