@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 int32_t main(){
     int n, q, m;
     cin >> n >> q >> m;

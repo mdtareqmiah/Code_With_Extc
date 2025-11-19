@@ -5,16 +5,15 @@ using namespace std;
 #define endl '\n'
 
 void solve(){
-    // your code here
+
     int n;
     cin>>n;
     vector<int>v(n);
     for(int &u:v) cin>>u;
-    for(int i=0; i<n; i++){
-        if(v[i]<v[i+1]+v[i]){
-            cout<<v[i+1]<<"\n";
-            break;
-        }
+    if(v[0] > v[1]){
+        cout << v[0] + v[1] << endl;
+    }else{
+        cout << 2 * min(v[0], v[1]) << endl;
     }
 }
 
